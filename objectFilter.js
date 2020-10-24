@@ -5,9 +5,16 @@
 const objectFilter = (obj, callback) => {
   const result = {};
 
-  for (let [key, value] of Object.entries(obj)) {
-    result[key] = callback(value);
+  for (let key in obj) {
+    result[key] = callback(obj[key]);
   }
 
   return result;
 };
+
+const addTwo = (num) => num + 2;
+const subtractOne = (num) => num - 1;
+const isEven = (num) => num % 2 === 0;
+
+console.log(objectFilter({ first: 2, second: 4 }, addTwo));
+console.log(objectFilter({ 1: 0, 2: 1, 3: 2, 4: 3 }, isEven));
