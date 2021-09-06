@@ -21,7 +21,7 @@ const mergeTwoLists = (l1, l2) => {
             l1 = l1.next;
         }
 
-        copy = copy.next
+        copy = copy.next;
     }
 
     //There will be remaining node on either list
